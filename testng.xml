@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "testng-1.0.dtd">
+<suite name="Accessibility Tests">
+    <test name="Test on Chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="accessibility.wcag.WcagTest"/>
+        </classes>
+    </test>
+
+    <test name="Test on Firefox">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="accessibility.wcag.WcagTest">
+            </class>
+        </classes>
+    </test>
+</suite>

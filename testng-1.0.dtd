@@ -1,0 +1,36 @@
+<!ELEMENT suite (test+)>
+<!ATTLIST suite
+  name               CDATA     #REQUIRED
+  parallel           (tests | methods | classes | instances | none) "none"
+  thread-count       CDATA     "5"
+>
+
+<!ELEMENT test (parameter*, classes)>
+<!ATTLIST test
+  name               CDATA     #REQUIRED
+  parallel           (tests | methods | classes | instances | none) "none"
+  thread-count       CDATA     "5"
+>
+
+<!ELEMENT parameter EMPTY>
+<!ATTLIST parameter
+  name  CDATA #REQUIRED
+  value CDATA #REQUIRED
+>
+
+<!ELEMENT classes (class+)>
+<!ELEMENT class (methods?)>
+<!ATTLIST class
+  name CDATA #REQUIRED
+>
+
+<!ELEMENT methods (include*, exclude*)>
+<!ELEMENT include EMPTY>
+<!ATTLIST include
+  name CDATA #REQUIRED
+>
+
+<!ELEMENT exclude EMPTY>
+<!ATTLIST exclude
+  name CDATA #REQUIRED
+>
